@@ -1,4 +1,5 @@
 const express = require('express'); // import express module (simplifies routing/requests, among other things)
+const path = require('path');
 const app = express(); // create an instance of the express module (app is the conventional variable name used)
 const fetch = require('node-fetch'); // import node-fetch (enables the fetch API to be used server-side)
 const PORT = process.env.PORT || 5000; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
