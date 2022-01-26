@@ -4,9 +4,11 @@ const fetch = require('node-fetch'); // import node-fetch (enables the fetch API
 const PORT = process.env.PORT || 5000; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
 const ttapitok = process.env.ttbearer
 
-var sku = req.query.sku;
 
-app.get('/', (req, res) => { // send a get request to root directory ('/' is this file (app.js))
+
+app.get('/', (req, res) => { 
+  var sku = req.query.sku;
+  // send a get request to root directory ('/' is this file (app.js))
   fetch('https://api.turnto.com/v1.2/reviews?sku=Z94__194', {
     method: 'GET',
     headers: { 'Authorization': 'bearer ' + ttapitok}
