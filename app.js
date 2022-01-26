@@ -9,7 +9,7 @@ const ttapitok = process.env.ttbearer
 app.get('/', (req, res) => { 
   var sku = req.query.sku;
   // send a get request to root directory ('/' is this file (app.js))
-  fetch('https://api.turnto.com/v1.2/reviews?sku=Z94__194', {
+  fetch('https://api.turnto.com/v1.2/reviews?sku='+sku, {
     method: 'GET',
     headers: { 'Authorization': 'bearer ' + ttapitok}
   }) // fetch TT reviews
