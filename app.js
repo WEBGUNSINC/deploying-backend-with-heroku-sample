@@ -2,14 +2,13 @@ const express = require('express'); // import express module (simplifies routing
 const app = express(); // create an instance of the express module (app is the conventional variable name used)
 const fetch = require('node-fetch'); // import node-fetch (enables the fetch API to be used server-side)
 const PORT = process.env.PORT || 5000; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
-const auth = process.env.ttbearer
 
 
-var myHeaders = new Headers();
+const myHeaders = new Headers();
 myHeaders.append("Authorization", "bearer AuXYdS7BiIkWTi1xiQfS6pbb2PUC47b2yEx");
 myHeaders.append("Cookie", "AWSALB=mxwKBInjbOVmDPCgVRV2krNOhmLerhUbzhWeAaezDCLFwEu27mgLy3+K61mL33k4CuB4Skvjd6nUUVNtVQpK4/EN0zy94kazhOetM1OTcQK9OPLe2N88PiIXogs8; AWSALBCORS=mxwKBInjbOVmDPCgVRV2krNOhmLerhUbzhWeAaezDCLFwEu27mgLy3+K61mL33k4CuB4Skvjd6nUUVNtVQpK4/EN0zy94kazhOetM1OTcQK9OPLe2N88PiIXogs8");
 
-var requestOptions = {
+const requestOptions = {
   method: 'GET',
   headers: myHeaders,
   redirect: 'follow'
