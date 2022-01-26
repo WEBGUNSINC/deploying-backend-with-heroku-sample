@@ -9,7 +9,7 @@ app.get('/', (req, res) => { // send a get request to root directory ('/' is thi
     headers: { 'Authorization': 'bearer AuXYdS7BiIkWTi1xiQfS6pbb2PUC47b2yEx'}
   }) // fetch TT reviews
     .then(res => res.json()) // return a promise containing the response
-    .then(json => res.send(`${JSON.stringify(json)}`)) // extract the JSON body content from the response (specifically the title value) and sends it to the client
+    .then(json => res.send(`${JSON.parse(json)}`)) // extract the JSON body content from the response (specifically the title value) and sends it to the client
     .catch(function(err){ // catch any errors
       console.log(err); // log errors to the console
     })
