@@ -14,12 +14,14 @@ app.get('/', (req, res) => {
     headers: { 'Authorization': 'bearer ' + ttapitok}
   }) // fetch TT reviews
     .then(res => res.json()) // return a promise containing the response
-    .then(json => res.send(`
-    My Sample Heroku app using TurnTo's API<br> 
-    Review Title: ${json.reviews[0].title}<br>
-    Rating: ${json.reviews[0].rating}<br>
-    Body: ${json.reviews[0].text}<br>
-    Name: ${json.reviews[0].user.nickName}`))
+    .then(json => {
+      res.send(`
+        My Sample Heroku app using TurnTo's API 2<br> 
+        Review Title: ${json.reviews[0].title}<br>
+        Rating: ${json.reviews[0].rating}<br>
+        Body: ${json.reviews[0].text}<br>
+        Name: ${json.reviews[0].user.nickName}`)
+    })
      // extract the JSON body content from the response and sends it to the client
     .catch(function(err){ // catch any errors
       console.log(err); // log errors to the console
