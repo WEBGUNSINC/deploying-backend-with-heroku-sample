@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     headers: { 'Authorization': 'bearer ' + ttapitok}
   }) // fetch TT reviews
     .then(res => res.json()) // return a promise containing the response
-    .then(json => res.send(`<h3> ${json.reviews[0].title}</h3><br>${json.reviews[0].rating}<br>${json.reviews[0].text}<br>${json.reviews[0].user.nickName}`)) // extract the JSON body content from the response (specifically the title value) and sends it to the client
+    .then(json => res.send(`My Sample Heroku App calling TurnTo's API<br> Review Title: ${json.reviews[0].title}<br>Rating: ${json.reviews[0].rating}<br>Body: ${json.reviews[0].text}<br>Name: ${json.reviews[0].user.nickName}`)) // extract the JSON body content from the response (specifically the title value) and sends it to the client
     .catch(function(err){ // catch any errors
       console.log(err); // log errors to the console
     })
