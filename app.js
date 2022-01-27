@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     })
 })
 
-document.write(json);
+res.send(json);
 
 app.listen(PORT, () => { // start server and listen on specified port
   console.log(`App is running on ${PORT}`) // confirm server is running and log port to the console
