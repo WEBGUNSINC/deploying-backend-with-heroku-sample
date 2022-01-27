@@ -15,8 +15,9 @@ app.get('/', (req, res) => {
   }) // fetch TT reviews
     .then(res => res.json()) // return a promise containing the response
     .then(json => {
-      res.write(`My Sample Heroku app using TurnTo's API 2`)
-      res.write(`Total: ` + json.total)
+      res.write(`My Sample Heroku app using TurnTo's API `)
+      res.write(`
+        Total Reviews: ` + json.total)
       for(var i = 0; i < json.total; i++) {
           res.write(`
             Review Title: ${json.reviews[i].title}
