@@ -19,10 +19,10 @@ app.get('/', (req, res) => {
       //res.write(json.total)
       //for(var i = 0; i < json.reviews.length; i++) {
           res.write(`
-            Review Title: ${json.reviews[i].title}<br>
-            Rating: ${json.reviews[i].rating}<br>
-            Body: ${json.reviews[i].text}<br>
-            Name: ${json.reviews[i].user.nickName}`)
+            Review Title: ${json.reviews[0].title}<br>
+            Rating: ${json.reviews[0].rating}<br>
+            Body: ${json.reviews[0].text}<br>
+            Name: ${json.reviews[0].user.nickName}`)
         //}
           //res.write(JSON.stringify(json))
           res.end()
