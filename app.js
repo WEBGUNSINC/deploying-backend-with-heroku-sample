@@ -17,13 +17,13 @@ app.get('/', (req, res) => {
     .then(json => {
       res.write(`My Sample Heroku app using TurnTo's API 2<br><br>` + json.total)
       //res.write(json.total)
-      for(var i = 0; i < json.reviews.length; i++) {
+      //for(var i = 0; i < json.reviews.length; i++) {
           res.write(`
             Review Title: ${json.reviews[i].title}<br>
             Rating: ${json.reviews[i].rating}<br>
             Body: ${json.reviews[i].text}<br>
             Name: ${json.reviews[i].user.nickName}`)
-        }
+        //}
           //res.write(JSON.stringify(json))
           res.end()
     })
