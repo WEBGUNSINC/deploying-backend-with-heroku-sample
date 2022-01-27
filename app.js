@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
       res.write(`<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>`)
-      res.write('<body>');
+      res.write('<body class="p-3">');
       res.write('<h1 class="p-3 border bg-light">My Sample Heroku app using TurnTo API</h1>')
-      res.write('<p class="p-3 border bg-light"><strong>Total Reviews:</strong> ' + json.total + '</p>')
+      res.write('<div class="container overflow-hidden"><div class="row gy-5"><p class="p-3 border bg-light"><strong>Total Reviews:</strong> ' + json.total + '</p>')
           for(var i = 0; i < json.total; i++) {
           res.write('<p class="p-3 border bg-light"><strong>Review Title:</strong> ' + json.reviews[i].title + '</p>')
           res.write('<p class="p-3 border bg-light"><strong>Rating:</strong> ' + json.reviews[i].rating + '</p>')
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
           res.write('<p class="p-3 border bg-light"><strong>Name:</strong> ' + json.reviews[i].user.nickName + '</p>')
         }
           //res.write(JSON.stringify(json))
-          res.write('</body>');
+          res.write('</div></div></body>');
           res.write('</html>');
           res.end()
     })
