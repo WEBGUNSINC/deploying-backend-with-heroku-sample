@@ -22,7 +22,9 @@ app.get('/', (req, res) => {
             Review Title: ${json.reviews[i].title}
             Rating: ${json.reviews[i].rating}
             Body: ${json.reviews[i].text}
-            Name: ${json.reviews[i].user.nickName}`)
+            Name: ${json.reviews[i].user.nickName}`
+
+            )
         }
           //res.write(JSON.stringify(json))
           res.end()
