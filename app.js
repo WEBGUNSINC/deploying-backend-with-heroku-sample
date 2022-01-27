@@ -15,28 +15,25 @@ app.get('/', (req, res) => {
   }) // fetch TT reviews
     .then(res => res.json()) // return a promise containing the response
     .then(json => {
-      res.write(`My Sample Heroku app using TurnTo's API `)
-      res.write(`
-        Total Reviews: ` + json.total)
-      for(var i = 0; i < json.total; i++) {
-          res.write(`
-            Review Title: ${json.reviews[i].title}
-            Rating: ${json.reviews[i].rating}
-            Body: ${json.reviews[i].text}
-            Name: ${json.reviews[i].user.nickName}`
-            
-            )
-        }
-          //res.write(JSON.stringify(json))
-          res.end()
+      res.write('<html>');
+      res.write('<body>');
+      res.write('<h1>My Sample Heroku app using TurnTo API</h1>')
+      res.write('<p><strong>Total Reviews:</strong> ' + json.total +'</p>')
+          for(var i = 0; i < json.total; i++) {
+              res.write('<p>Review Title:' `${json.reviews[i].title}` + '</p>')
+              res.write('<p>Rating:' `${json.reviews[i].rating}` + '</p>')
+              res.write('<p>Body:' `${json.reviews[i].text}` + '</p>')
+              res.write('<p>Name:' `${json.reviews[i].user.nickName}` + '</p>')
+              }
+              res.write('</body>');
+              res.write('</html>');
+              res.end()
     })
      // extract the JSON body content from the response and sends it to the client
     .catch(function(err){ // catch any errors
       console.log(err); // log errors to the console
     })
 })
-
-
 
 app.listen(PORT, () => { // start server and listen on specified port
   console.log(`App is running on ${PORT}`) // confirm server is running and log port to the console
