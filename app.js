@@ -18,9 +18,11 @@ app.get('/', (req, res) => {
     .catch(function(err){ // catch any errors
       console.log(err); // log errors to the console
     })
+
+    res.send(json);
 })
 
-res.send(json);
+
 
 app.listen(PORT, () => { // start server and listen on specified port
   console.log(`App is running on ${PORT}`) // confirm server is running and log port to the console
