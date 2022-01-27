@@ -14,7 +14,9 @@ app.get('/', (req, res) => {
     headers: { 'Authorization': 'bearer ' + ttapitok}
   }) // fetch TT reviews
     .then(res => res.json()) // return a promise containing the response
-    .then(json => res.send(json.reviews[0].title)) // extract the JSON body content from the response (specifically the title value) and sends it to the client
+    .then(json => res.send(
+      for (var i = 0; i < json.length; i++){
+      json.reviews[0].title)}) // extract the JSON body content from the response (specifically the title value) and sends it to the client
     .catch(function(err){ // catch any errors
       console.log(err); // log errors to the console
     })
