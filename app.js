@@ -21,9 +21,9 @@ app.get('/', (req, res) => {
     ${json.reviews[0].text}<br>
     ${json.reviews[0].user.nickName}
     ${json.reviews[1].title}<br>
-    ${json.reviews[2].rating}<br>
-    ${json.reviews[3].text}<br>
-    ${json.reviews[4].user.nickName}
+    ${json.reviews[1].rating}<br>
+    ${json.reviews[1].text}<br>
+    ${json.reviews[1].user.nickName}
     `))
      // extract the JSON body content from the response and sends it to the client
     .catch(function(err){ // catch any errors
