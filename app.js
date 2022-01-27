@@ -20,10 +20,10 @@ app.get('/', (req, res) => {
       res.write('<h1>My Sample Heroku app using TurnTo API</h1>')
       res.write('<p><strong>Total Reviews:</strong> ' + json.total + '</p>')
           for(var i = 0; i < json.total; i++) {
-          res.write('<p><strong>Review Title:</strong>' + json.reviews[i].title + '</p>')
-          res.write('<p><strong>Rating: ' + json.reviews[i].rating + '</p>')
-          res.write('<p><strong>Body: ' + json.reviews[i].text + '</p>')
-          res.write('<p><strong>Name: ' + json.reviews[i].user.nickName + '</p>')
+          res.write('<p><strong>Review Title:</strong> ' + json.reviews[i].title + '</p>')
+          res.write('<p><strong>Rating:</strong> ' + json.reviews[i].rating + '</p>')
+          res.write('<p><strong>Body:</strong> ' + json.reviews[i].text + '</p>')
+          res.write('<p><strong>Name:</strong> ' + json.reviews[i].user.nickName + '</p>')
         }
           //res.write(JSON.stringify(json))
           res.write('</body>');
