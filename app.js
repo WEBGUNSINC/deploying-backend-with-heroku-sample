@@ -15,8 +15,8 @@ app.get('/', (req, res) => {
   }) // fetch TT reviews
     .then(res => res.json()) // return a promise containing the response
     .then(json => {
+      res.send(`My Sample Heroku app using TurnTo's API 2<br>`)
       res.send(`
-        My Sample Heroku app using TurnTo's API 2<br> 
         Review Title: ${json.reviews[0].title}<br>
         Rating: ${json.reviews[0].rating}<br>
         Body: ${json.reviews[0].text}<br>
