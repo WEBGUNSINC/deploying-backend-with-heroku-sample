@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
             Body: ${json.reviews[0].text}<br>
             Name: ${json.reviews[0].user.nickName}`)
           // }
+          res.write(json)
           res.end()
     })
      // extract the JSON body content from the response and sends it to the client
