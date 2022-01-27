@@ -16,12 +16,14 @@ app.get('/', (req, res) => {
     .then(res => res.json()) // return a promise containing the response
     .then(json => {
       res.write(`My Sample Heroku app using TurnTo's API 2<br>`)
-      res.write(`
-        Review Title: ${json.reviews[0].title}<br>
-        Rating: ${json.reviews[0].rating}<br>
-        Body: ${json.reviews[0].text}<br>
-        Name: ${json.reviews[0].user.nickName}`)
-      res.end()
+      for(var i = 0; i < json.length; i++) {
+          res.write(`
+            Review Title: ${json.reviews[0].title}<br>
+            Rating: ${json.reviews[0].rating}<br>
+            Body: ${json.reviews[0].text}<br>
+            Name: ${json.reviews[0].user.nickName}`)
+          }
+          res.end()
     })
      // extract the JSON body content from the response and sends it to the client
     .catch(function(err){ // catch any errors
