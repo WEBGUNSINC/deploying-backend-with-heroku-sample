@@ -24,15 +24,15 @@ app.get('/', (req, res) => {
       res.write('<div class="container overflow-hidden"><div class="row"><div class="p-3 mb-3 border bg-light"><strong>Total Reviews:</strong> ' + json.total + '</div>')
           for(var i = 0; i < json.total; i++) {
           res.write('<div class="row"><div class="col">')
-          res.write('<strong>Review Title:</strong> ' + json.reviews[i].title)
-          res.write('<strong>Rating:</strong> ' + json.reviews[i].rating)
-          res.write('<strong>Body:</strong> ' + json.reviews[i].text)
-          res.write('<strong>Name:</strong> ' + json.reviews[i].user.nickName)
-          res.write('</div></div>')
+          res.write('<strong>Review Title:</strong> ' + json.reviews[i].title + '<br>')
+          res.write('<strong>Rating:</strong> ' + json.reviews[i].rating + '<br>')
+          res.write('<strong>Body:</strong> ' + json.reviews[i].text + '<br>')
+          res.write('<strong>Name:</strong> ' + json.reviews[i].user.nickName + '<br>')
+          res.write('</div>')
           res.write('<hr>')
         }
           //res.write(JSON.stringify(json))
-          res.write('</div></div></body>');
+          res.write('</div></div></div></body>');
           res.write('</html>');
           res.end()
     })
