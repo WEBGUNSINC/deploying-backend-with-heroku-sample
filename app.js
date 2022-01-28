@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
       res.write('<div class="container overflow-hidden"><div class="row"><div class="p-3 mb-3 border bg-light"><strong>Total Reviews:</strong> ' + json.total + '</div>')
       res.write('<div class="row">')
           for(var i = 0; i < json.total; i++) {
-          res.write('<div class="col">')
+          res.write('<div class="col-4">')
           res.write('<strong>Review Title:</strong> ' + json.reviews[i].title + '<br>')
           res.write('<strong>Rating:</strong> ' + json.reviews[i].rating + '<br>')
           res.write('<strong>Body:</strong> ' + json.reviews[i].text + '<br>')
