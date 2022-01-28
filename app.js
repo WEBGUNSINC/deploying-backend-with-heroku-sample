@@ -22,8 +22,9 @@ app.get('/', (req, res) => {
       res.write('<body class="p-3">');
       res.write('<h3 class="p-3 border bg-light">My Sample Heroku app using TurnTo\'s API</h3>')
       res.write('<div class="container overflow-hidden"><div class="row"><div class="p-3 mb-3 border bg-light"><strong>Total Reviews:</strong> ' + json.total + '</div>')
+      res.write('<div class="row">')
           for(var i = 0; i < json.total; i++) {
-          res.write('<div class="row"><div class="col">')
+          res.write('<div class="col">')
           res.write('<strong>Review Title:</strong> ' + json.reviews[i].title + '<br>')
           res.write('<strong>Rating:</strong> ' + json.reviews[i].rating + '<br>')
           res.write('<strong>Body:</strong> ' + json.reviews[i].text + '<br>')
@@ -32,7 +33,7 @@ app.get('/', (req, res) => {
           res.write('<hr>')
         }
           //res.write(JSON.stringify(json))
-          res.write('</div></div></div></body>');
+          res.write('</div></div></body>');
           res.write('</html>');
           res.end()
     })
