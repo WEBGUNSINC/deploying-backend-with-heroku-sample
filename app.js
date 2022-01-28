@@ -20,13 +20,13 @@ app.get('/', (req, res) => {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>`)
       res.write('<body class="p-3">');
-      res.write('<h1 class="p-3 border bg-light">My Sample Heroku app using TurnTo\'s API</h1>')
-      res.write('<div class="container overflow-hidden"><div class="row gy-5"><div class="border bg-light"><strong>Total Reviews:</strong> ' + json.total + '</div>')
+      res.write('<h3 class="p-3 border bg-light">My Sample Heroku app using TurnTo\'s API</h3>')
+      res.write('<div class="container overflow-hidden"><div class="row"><div class="p-3 mb-3 border bg-light"><strong>Total Reviews:</strong> ' + json.total + '</div>')
           for(var i = 0; i < json.total; i++) {
-          res.write('<div class="row mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Review Title:</strong> ' + json.reviews[i].title + '</div></div>')
-          res.write('<div class="row mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Rating:</strong> ' + json.reviews[i].rating + '</div></div>')
-          res.write('<div class="row mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Body:</strong> ' + json.reviews[i].text + '</div></div>')
-          res.write('<div class="row mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Name:</strong> ' + json.reviews[i].user.nickName + '</div></div>')
+          res.write('<div class="mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Review Title:</strong> ' + json.reviews[i].title + '</div></div>')
+          res.write('<div class="mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Rating:</strong> ' + json.reviews[i].rating + '</div></div>')
+          res.write('<div class="mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Body:</strong> ' + json.reviews[i].text + '</div></div>')
+          res.write('<div class="mb-3 border bg-light"><div class="col col-6 col-lg-4"><strong>Name:</strong> ' + json.reviews[i].user.nickName + '</div></div>')
         }
           //res.write(JSON.stringify(json))
           res.write('</div></div></body>');
